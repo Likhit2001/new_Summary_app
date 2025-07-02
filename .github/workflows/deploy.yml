@@ -2,7 +2,7 @@ name: Deploy to Heroku
 
 on:
   push:
-    branches: 
+    branches:
       - main
 
 jobs:
@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -19,17 +21,15 @@ jobs:
         python-version: '3.10'
 
     - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      run: pip install -r requirements.txt
 
     - name: Install Heroku CLI
-      run: |
-        curl https://cli-assets.heroku.com/install.sh | sh
+      run: curl https://cli-assets.heroku.com/install.sh | sh
 
     - name: Deploy to Heroku
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: |
-        echo "$HEROKU_API_KEY" | heroku auth:token
-        heroku git:remote -a news-summarizer-app
+        git remote add heroku https://git.heroku.com/news-summarizer-app.git
+        git fetch --unshallow   # ✅ This fixes the push error
         git push https://heroku:$HEROKU_API_KEY@git.heroku.com/news-summarizer-app.git HEAD:main --force
