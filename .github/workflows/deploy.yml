@@ -31,5 +31,4 @@ jobs:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: |
         git remote add heroku https://git.heroku.com/news-summarizer-app.git
-        git fetch --unshallow   # ✅ This fixes the push error
         git push https://heroku:$HEROKU_API_KEY@git.heroku.com/news-summarizer-app.git HEAD:main --force
