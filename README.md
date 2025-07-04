@@ -18,7 +18,8 @@ Fine-tuned a lightweight T5 model using **QLoRA** on AWS SageMaker for high-qual
 
 > 📌 Replace this with your actual image once added:
 
-![App Screenshot](./screenshots/demo_ui.png)
+![App Screenshot] <img width="804" alt="Screenshot 2025-07-04 at 4 18 44 AM" src="https://github.com/user-attachments/assets/a5b9988a-586e-4aad-b3dd-e5901404356f" />
+
 
 ---
 
@@ -26,7 +27,7 @@ Fine-tuned a lightweight T5 model using **QLoRA** on AWS SageMaker for high-qual
 
 > 📌 Replace this with your deployed client URL:
 
-**🔗 Try it live:** [https://your-heroku-app-name.herokuapp.com](https://your-heroku-app-name.herokuapp.com)
+**🔗 Try it live:** [https://news-summarizer-app-07a98f43784c.herokuapp.com/](https://news-summarizer-app-07a98f43784c.herokuapp.com/)
 
 ---
 
@@ -103,18 +104,3 @@ docker run -p 8501:8501 summarizer-client
 ```
 
 ---
-
-## 🙌 Credits
-
-- **Developed by**: Likhit Kothapalli
-- **Model & API**: Fine-tuned & hosted on AWS
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-> 🔥 Fine-tuned with QLoRA. Powered by T5. Delivered serverlessly.  
